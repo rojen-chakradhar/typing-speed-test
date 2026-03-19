@@ -8,8 +8,63 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   </head>
   <body>
-    <main>
-    </main>
+    <div class="page">
+      <div class="app-shell">
+        <header class="topbar">
+          <div class="brand">
+            <span class="brande-badge">TYPEFLOW</span>
+            <h1>Typing Speed Test</h1>
+            <p>Test your typing speed, accuracy, and consistency.</p>
+          </div>
+          <div class="top-actions">
+            <div class="best-score" id="bestScore">Best WPM: 0</div>
+          </div>
+        </header>
+        <main class="layout">
+          <section class="panel controls-panel">
+            <div class="panel-header">
+              <h2>Controls</h2>
+              <p>Choose a mode and start the test.</p>
+            </div>
+            <div class="mode-buttons">
+              <button class="mode-btn active" data-time="30">30 sec</button>
+              <button class="mode-btn" data-time="60">60 sec</button>
+            </div>
+            <div class="action-buttons">
+              <button class="primary-btn" id="startBtn">Start</button>
+              <button class="secondary-btn" id="restartBtn">Restart</button>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-label">Time Left</span>
+                <strong class="stat-value" id="time">30</strong>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">WPM</span>
+                <strong class="stat-value" id="wpm">0</strong>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Accuracy</span>
+                <strong class="stat-value" id="accuracy">100%</strong>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Mistakes</span>
+                <strong class="stat-value" id="mistakes">0</strong>
+              </div>
+            </div>
+          </section>
+          <section class="panel typing-panel">
+            <div class="panel-header">
+              <h2>Typing Area</h2>
+              <p>press start to start the test</p>
+            </div>
+            <div class="typing-test" id="typingTest"></div>
+            <textarea id="inputField" placeholder="Press start to start the test" spellcheck="false" disabled></textarea>
+            <div class="bottom-note">Accuracy first. Speed follows.</div>
+          </section>
+        </main>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
