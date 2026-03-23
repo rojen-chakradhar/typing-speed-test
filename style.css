@@ -42,7 +42,7 @@ textarea {
 }
 
 .page {
-	min-height: 100vh;
+	min-height: 100dvh;
 	padding: 20px;
 }
 
@@ -185,7 +185,7 @@ button:active {
 .mode-btn.active,
 .primary-btn {
 	color: #000;
-	bottom: var(--accent);
+	background: var(--accent);
 }
 
 .full-width {
