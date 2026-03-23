@@ -65,6 +65,34 @@
         </main>
       </div>
     </div>
+    <div class="result-overlay" id="resultOverlay">
+      <div class="result-card">
+        <div class="result-head">
+          <span class="brand-badge">RESULT</span>
+          <h2>Test Completed</h2>
+          <p>Your final performance spanshot.</p>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="stat-label">Final WPM</span>
+            <strong class="stat-value" id="finalWpm">0</strong>
+          </div>
+          <div class="result-item">
+            <span class="stat-label">Accuracy</span>
+            <strong class="stat-value" id="finalAccuracy">0</strong>
+          </div>
+          <div class="result-item">
+            <span class="stat-label">Mistakes</span>
+            <strong class="stat-value" id="finalMistakes">0</strong>
+          </div>
+          <div class="result-item">
+            <span class="stat-label">est WPM</span>
+            <strong class="stat-value" id="finalBest">0</strong>
+          </div>
+        </div>
+        <button class="primary-btn full-width" id="closeResultBtn">Try Again</button>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
