@@ -41,8 +41,8 @@ const finalBest = document.getElementById("finalBest");
 const closeResultBtn = document.getElementById("closeResultBtn");
 const diffButtons = document.querySelectorAll("[data-diff]");
 
-let selectedTime = 30;
-let timeLeft = 30;
+let selectedTime = 15;
+let timeLeft = 15;
 let timer = null;
 let testStarted = false;
 let testEnded = false;
@@ -71,19 +71,15 @@ function pickRandomParagraph() {
 
 function renderParagraph(text) {
 	typingText.innerHTML = "";
-
 	text.split("").forEach((char, index) => {
 		const span = document.createElement("span");
 		span.textContent = char;
-
 		if (char === " ") {
 			span.classList.add("space-visible");
 		}
-
 		if (index === 0) {
 			span.classList.add("current");
 		}
-
 		typingText.appendChild(span);
 	});
 }
@@ -95,10 +91,9 @@ function resetStats() {
 	totalTyped = 0;
 	testStarted = false;
 	testEnded = false;
-
 	timeEl.textContent = timeLeft;
 	wpmEl.textContent = "0";
-	accuracyEl.textContent = "100%";
+	accuracyEl.textContent = "0%";
 	mistakesEl.textContent = "0";
 }
 
@@ -108,24 +103,21 @@ function prepareTest() {
 	renderParagraph(currentParagraph);
 	inputField.value = "";
 	inputField.disabled = true;
-	inputField.placeholder = "Press Start Test, then begin typing here...";
+	inputField.placeholder = "Press Start button and start typing above text";
 	resetStats();
 }
 
 function calculateWPM() {
 	const timeSpent = selectedTime - timeLeft;
 	if (timeSpent <= 0) return 0;
-
 	const wordsTyped = correctChars / 5;
 	const minutes = timeSpent / 60;
 	return Math.max(0, Math.round(wordsTyped / minutes));
 }
-
 function calculateAccuracy() {
-	if (totalTyped === 0) return 100;
+	if (totalTyped === 0) return 0;
 	return Math.max(0, Math.round((correctChars / totalTyped) * 100));
 }
-
 function updateStats() {
 	wpmEl.textContent = calculateWPM();
 	accuracyEl.textContent = `${calculateAccuracy()}%`;
@@ -249,6 +241,11 @@ restartBtn.addEventListener("click", () => {
 });
 
 closeResultBtn.addEventListener("click", () => {
+	resultOverlay.classList.remove("show");
+	prepareTest();
+});
+
+reTryResultBtn.addEventListener("click", () => {
 	resultOverlay.classList.remove("show");
 	prepareTest();
 	startTest();

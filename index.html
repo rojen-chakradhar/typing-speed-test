@@ -11,41 +11,44 @@
     <div class="page">
       <div class="app-shell">
         <header class="topbar">
-          <div class="brand">
+          <a href="./index.html" class="brand">
             <span class="brand-badge">TRACK SPEED</span>
             <h1>Typing Speed Test</h1>
-            <p>Test your typing speed, accuracy, and consistency.</p>
-          </div>
+          </a>
           <div class="top-actions">
-            <div class="best-score" id="bestScore">Best WPM: 0</div>
+            <div class="best-score" id="bestScore" title="Your best WPM">Best WPM: 0</div>
           </div>
         </header>
-        <main class="layout">
-          <section class="panel controls-panel">
-            <div class="panel-header">
-              <h2>Controls</h2>
-              <p>Choose a mode and start the test.</p>
-            </div>
-            <span class="stat-label">Time:</span>
+        <nav class="controls">
+          <div class="timer-btns btns-wrapper">
+            <p class="btns-label">Time:</p>
             <div class="mode-buttons">
-              <button class="mode-btn timer active" data-time="30">30 sec</button>
-              <button class="mode-btn timer" data-time="60">60 sec</button>
+              <button class="mode-btn timer active" data-time="15" title="15 sec">15</button>
+              <button class="mode-btn timer" data-time="30" title="30 sec">30</button>
+              <button class="mode-btn timer" data-time="60" title="60 sec">60</button>
             </div>
-            <span class="stat-label">Difficulty:</span>
+          </div>
+          <div class="diff-btns btns-wrapper">
+            <p class="btns-label">Difficulty:</p>
             <div class="mode-buttons">
-              <button class="mode-btn" data-diff="easy">Easy</button>
-              <button class="mode-btn active" data-diff="medium">medium</button>
-              <button class="mode-btn" data-diff="hard">hard</button>
-            </div><br>
+              <button class="mode-btn" data-diff="easy" title="easy">Easy</button>
+              <button class="mode-btn active" data-diff="medium" title="medium">Medium</button>
+              <button class="mode-btn" data-diff="hard" title="hard">hard</button>
+            </div>
+          </div>
+          <div class="action-btns btns-wrapper">
             <div class="action-buttons">
-              <button class="primary-btn" id="startBtn">Start</button>
-              <button class="secondary-btn" id="restartBtn">Restart</button>
+              <button class="primary-btn action-btn" id="startBtn" title="play"><i class="ri-play-line"></i></button>
+              <button class="secondary-btn action-btn" id="restartBtn" title="restart"><i class="ri-restart-line"></i></button>
             </div>
+          </div>
+        </nav>
+        <main class="layout">
+          <section class="controls-panel">
             <div class="stats-grid">
-              <span class="stat-label">Stat:</span>
               <div class="stat-card">
                 <span class="stat-label">Time Left</span>
-                <strong class="stat-value" id="time">30</strong>
+                <strong class="stat-value" id="time">15</strong>
               </div>
               <div class="stat-card">
                 <span class="stat-label">WPM</span>
@@ -53,7 +56,7 @@
               </div>
               <div class="stat-card">
                 <span class="stat-label">Accuracy</span>
-                <strong class="stat-value" id="accuracy">100%</strong>
+                <strong class="stat-value" id="accuracy">0%</strong>
               </div>
               <div class="stat-card">
                 <span class="stat-label">Mistakes</span>
@@ -62,13 +65,8 @@
             </div>
           </section>
           <section class="panel typing-panel">
-            <div class="panel-header">
-              <h2>Typing Area</h2>
-              <p>press start to start the test</p>
-            </div>
             <div class="typing-test" id="typingText"></div>
             <textarea id="inputField" placeholder="Press start to start the test" spellcheck="false" disabled></textarea>
-            <div class="bottom-note">Accuracy first. Speed follows.</div>
           </section>
         </main>
       </div>
@@ -98,7 +96,10 @@
             <strong class="stat-value" id="finalBest">0</strong>
           </div>
         </div>
-        <button class="primary-btn full-width" id="closeResultBtn">Try Again</button>
+        <div class="result-btns">
+          <button class="secondary-btn result-btn" id="closeResultBtn">Close</button>
+          <button class="primary-btn result-btn" id="reTryResultBtn">Try Again</button>
+        </div>
       </div>
     </div>
     <script src="./script.js"></script>
