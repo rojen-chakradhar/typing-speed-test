@@ -16,7 +16,7 @@ const difficulties = {
 	medium: [
 		"minimalism is not about removing everything but removing what is unnecessary while preserving clarity and intent",
 		"consistent deliberate practice builds long term skill more effectively than random bursts of motivation",
-		"design systems help maintain visutal consistency across complex interfaces and improve scalability"
+		"design systems help maintain visual consistency across complex interfaces and improve scalability"
 	],
 	hard: paragraphs
 };
