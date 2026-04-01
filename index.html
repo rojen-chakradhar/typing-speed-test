@@ -26,15 +26,23 @@
               <h2>Controls</h2>
               <p>Choose a mode and start the test.</p>
             </div>
+            <span class="stat-label">Time:</span>
             <div class="mode-buttons">
-              <button class="mode-btn active" data-time="30">30 sec</button>
-              <button class="mode-btn" data-time="60">60 sec</button>
+              <button class="mode-btn timer active" data-time="30">30 sec</button>
+              <button class="mode-btn timer" data-time="60">60 sec</button>
             </div>
+            <span class="stat-label">Difficulty:</span>
+            <div class="mode-buttons">
+              <button class="mode-btn" data-diff="easy">Easy</button>
+              <button class="mode-btn active" data-diff="medium">medium</button>
+              <button class="mode-btn" data-diff="hard">hard</button>
+            </div><br>
             <div class="action-buttons">
               <button class="primary-btn" id="startBtn">Start</button>
               <button class="secondary-btn" id="restartBtn">Restart</button>
             </div>
             <div class="stats-grid">
+              <span class="stat-label">Stat:</span>
               <div class="stat-card">
                 <span class="stat-label">Time Left</span>
                 <strong class="stat-value" id="time">30</strong>

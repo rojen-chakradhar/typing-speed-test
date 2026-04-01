@@ -236,6 +236,7 @@ button:active {
 	border-radius: 20px;
 	color: #d6d6d6;
 	background-color: #080808;
+	user-select: none;
 }
 
 .typing-text span.correct {

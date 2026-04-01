@@ -7,6 +7,20 @@ const paragraphs = [
 	"Minimal design is not empty design. It is a deliberate choice to reduce noise, guide attention, and make every visible element earn its place on the screen.",
 ];
 
+const difficulties = {
+	easy: [
+		"practice makes man perfect",
+		"accuracy is more important",
+		"daily practice will improve typing faster"
+	],
+	medium: [
+		"minimalism is not about removing everything but removing what is unnecessary while preserving clarity and intent",
+		"consistent deliberate practice builds long term skill more effectively than random bursts of motivation",
+		"design systems help maintain visutal consistency across complex interfaces and improve scalability"
+	],
+	hard: paragraphs
+};
+
 const typingText = document.getElementById("typingText");
 const inputField = document.getElementById("inputField");
 const timeEl = document.getElementById("time");
@@ -17,7 +31,7 @@ const bestScoreEl = document.getElementById("bestScore");
 
 const startBtn = document.getElementById("startBtn");
 const restartBtn = document.getElementById("restartBtn");
-const modeButtons = document.querySelectorAll(".mode-btn");
+const modeButtons = document.querySelectorAll(".timer");
 
 const resultOverlay = document.getElementById("resultOverlay");
 const finalWpm = document.getElementById("finalWpm");
@@ -25,6 +39,7 @@ const finalAccuracy = document.getElementById("finalAccuracy");
 const finalMistakes = document.getElementById("finalMistakes");
 const finalBest = document.getElementById("finalBest");
 const closeResultBtn = document.getElementById("closeResultBtn");
+const diffButtons = document.querySelectorAll("[data-diff]");
 
 let selectedTime = 30;
 let timeLeft = 30;
@@ -35,6 +50,7 @@ let mistakes = 0;
 let correctChars = 0;
 let totalTyped = 0;
 let currentParagraph = "";
+let currentDifficulty = "medium";
 
 function getBestWpm() {
 	return Number(localStorage.getItem("typingTestBestWpm")) || 0;
@@ -49,7 +65,8 @@ function updateBestScoreUI() {
 }
 
 function pickRandomParagraph() {
-	return paragraphs[Math.floor(Math.random() * paragraphs.length)];
+	const list = difficulties[currentDifficulty];
+	return list[Math.floor(Math.random() * list.length)].toLowerCase();
 }
 
 function renderParagraph(text) {
@@ -127,6 +144,15 @@ function startTimer() {
 	}, 1000);
 }
 
+diffButtons.forEach(btn => {
+	btn.addEventListener("click", () => {
+		diffButtons.forEach(b => b.classList.remove("active"));
+		btn.classList.add("active");
+		currentDifficulty = btn.dataset.diff;
+		prepareTest();
+	});
+});
+
 function startTest() {
 	if (testStarted && !testEnded) return;
 
@@ -196,8 +222,10 @@ function handleTyping() {
 
 	updateStats();
 
-	if (typedChars.length >= currentParagraph.length) {
-		finishTest();
+	if (typedChars.length >= currentParagraph.length  || correctChars === currentParagraph.length) {
+		setTimeout(() => {
+			finishTest();
+		}, 150);
 	}
 }
 
@@ -232,3 +260,6 @@ window.addEventListener("load", () => {
 	updateBestScoreUI();
 	prepareTest();
 });
+
+typingText.addEventListener("copy", (e) => e.preventDefault());
+typingText.addEventListener("contextmenu", (e) => e.preventDefault());
