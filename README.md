@@ -1,7 +1,7 @@
 # TYPING SPEED TEST
-A samll site to test your typing speed.
+A small site to test your typing speed.
 
-![preview](https://flavortown.hackclub.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjU4MzU3LCJwdXIiOiJibG9iX2lkIn19--58db9ffefbb89a4d1756a7f3ff47689814eed082/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2xpbWl0IjpbODAwLDgwMF0sInNhdmVyIjp7InN0cmlwIjp0cnVlLCJxdWFsaXR5Ijo3NX19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--b31f00576a4e60a9662bd00307d0a77b5bfc6d7e/127.0.0.1_5500_index.html%20(23).png)
+![preview](https://flavortown.hackclub.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjU4MTEzLCJwdXIiOiJibG9iX2lkIn19--f056ade9352280941662ec9fa5e9fe11bec3a7e4/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2xpbWl0IjpbMTYwMCw5MDBdLCJzYXZlciI6eyJzdHJpcCI6dHJ1ZSwicXVhbGl0eSI6NzV9fSwicHVyIjoidmFyaWF0aW9uIn19--3bc8a2c9d65e3b087c0c0b37dcfb642bb247bc73/127.0.0.1_5500_index.html%20(20).png)
 
 ## Languages Used
 **Frontend:**
@@ -14,7 +14,7 @@ A samll site to test your typing speed.
 - Open github
 - search rojen-chakradhar
 - go to repo
-- look for
+- look for typing-speed-test
 - clone the repo
 - run index.html file
 - the site is open
