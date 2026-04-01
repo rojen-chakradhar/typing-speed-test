@@ -340,6 +340,13 @@ textarea:focus {
 	min-height: 40px;
 }
 
+@media (max-width: 1200px) {
+	.controls {
+		flex-wrap: wrap;
+		justify-content: start;
+	}
+}
+
 @media (max-width: 920px) {
 	.layout {
 		grid-template-columns: 1fr;
@@ -358,9 +365,6 @@ textarea:focus {
 		justify-content: space-between;
 		border-radius: 10px;
 		width: 100%;
-	}
-	.action-btn {
-		min-width: 300px;
 	}
 	.stats-grid {
 		flex-wrap: wrap;
@@ -391,9 +395,6 @@ textarea:focus {
 	}
 	.mode-buttons {
 		flex-direction: column;
-	}
-	.action-btn {
-		min-width: 100px;
 	}
 	.panel {
 		padding: 16px;
